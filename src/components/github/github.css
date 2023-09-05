@@ -1,0 +1,41 @@
+/* Adjust margin for the #github element */
+#github {
+    margin-top: 135rem; /* Adjust the margin for larger screens */
+  }
+  
+  /* Styles for individual GitHub items */
+  .github_item {
+    padding: 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+  }
+  
+  /* Container for GitHub items */
+  .github_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Add gap between items */
+  }
+  
+  /* Media Query for Medium-sized Screens (e.g., tablets) */
+  @media screen and (max-width: 1024px) {
+    
+    .github_container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  /* Media Query for Small Screens (e.g., mobile devices) */
+  @media screen and (max-width: 600px) {
+    #github {
+      margin-top: 100rem; /* Adjust the margin for smaller screens */
+    }
+    
+    /* Reduce the width of the container and adjust padding */
+    .github_container {
+      width: 90%; /* Adjust the width as needed */
+      padding: 2rem; /* Adjust padding */
+    }
+  }
+  

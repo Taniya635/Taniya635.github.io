@@ -1,0 +1,110 @@
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Hamburger Menu Toggle */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Menu List for Larger Screens */
+  .menu {
+    list-style-type: none;
+    margin: auto;
+    /* margin-left: 1rem; */
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center-align elements horizontally */
+  }
+  
+  .menu li {
+    margin-right: 1rem;
+    margin-left: 2rem;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover,
+  .menu a.active {
+    color: var(--color-primary);
+  }
+  
+  /* Additional CSS for Elements */
+  
+  /* Navbar Logo */
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  
+  /* Navbar Search Box (if applicable) */
+  .search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    border: none;
+    border-bottom: 2px solid var(--color-primary);
+    background-color: transparent;
+    color: #fff;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Responsive Navbar */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 60px;
+      right: 0;
+      left: 0;
+      align-items: center; /* Center-align elements horizontally */
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 0.5rem 0;
+    }
+  }
+  
