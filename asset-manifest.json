@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.53e4a1b2.css",
-    "main.js": "/static/js/main.f2ac6392.js",
+    "main.css": "/static/css/main.06a41fdd.css",
+    "main.js": "/static/js/main.f08ab1da.js",
+    "static/media/todo.png": "/static/media/todo.39c45b6c264eac62fd31.png",
+    "static/media/limeroad.png": "/static/media/limeroad.160223c5da73472f278f.png",
     "static/media/dsw.png": "/static/media/dsw.6efed5f50b5908e96b77.png",
     "static/media/expedia.png": "/static/media/expedia.9c1598c816c905627b23.png",
     "static/media/image1.png": "/static/media/image1.101d984295e413a7a6b2.png",
-    "static/media/limeroad.png": "/static/media/limeroad.a938de8ce51b9367ac11.png",
+    "static/media/calculator.png": "/static/media/calculator.82e8dd08ddd8cc358438.png",
     "static/media/Taniya_Maurya_resume.pdf": "/static/media/Taniya_Maurya_resume.36561032a0cbf20b96e6.pdf",
+    "static/media/job.png": "/static/media/job.0d6cf993297a843bc2ba.png",
     "static/media/about.jpg": "/static/media/about.9b17d21c1f3e4958101a.jpg",
     "static/media/bmi.png": "/static/media/bmi.8eed3e1170c03f9e2a34.png",
     "index.html": "/index.html",
-    "main.53e4a1b2.css.map": "/static/css/main.53e4a1b2.css.map",
-    "main.f2ac6392.js.map": "/static/js/main.f2ac6392.js.map"
+    "main.06a41fdd.css.map": "/static/css/main.06a41fdd.css.map",
+    "main.f08ab1da.js.map": "/static/js/main.f08ab1da.js.map"
   },
   "entrypoints": [
-    "static/css/main.53e4a1b2.css",
-    "static/js/main.f2ac6392.js"
+    "static/css/main.06a41fdd.css",
+    "static/js/main.f08ab1da.js"
   ]
 }
