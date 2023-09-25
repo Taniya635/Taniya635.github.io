@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.06a41fdd.css",
-    "main.js": "/static/js/main.baba259d.js",
+    "main.js": "/static/js/main.8d4c1c19.js",
     "static/media/todo.png": "/static/media/todo.39c45b6c264eac62fd31.png",
     "static/media/limeroad.png": "/static/media/limeroad.160223c5da73472f278f.png",
     "static/media/dsw.png": "/static/media/dsw.6efed5f50b5908e96b77.png",
@@ -11,14 +11,14 @@
     "static/media/calculator.png": "/static/media/calculator.82e8dd08ddd8cc358438.png",
     "static/media/Taniya_Maurya_resume.pdf": "/static/media/Taniya_Maurya_resume.36561032a0cbf20b96e6.pdf",
     "static/media/job.png": "/static/media/job.0d6cf993297a843bc2ba.png",
-    "static/media/about.jpg": "/static/media/about.9b17d21c1f3e4958101a.jpg",
+    "static/media/about.jpg": "/static/media/about.94e1ad8b131eb3c22817.jpg",
     "static/media/bmi.png": "/static/media/bmi.8eed3e1170c03f9e2a34.png",
     "index.html": "/index.html",
     "main.06a41fdd.css.map": "/static/css/main.06a41fdd.css.map",
-    "main.baba259d.js.map": "/static/js/main.baba259d.js.map"
+    "main.8d4c1c19.js.map": "/static/js/main.8d4c1c19.js.map"
   },
   "entrypoints": [
     "static/css/main.06a41fdd.css",
-    "static/js/main.baba259d.js"
+    "static/js/main.8d4c1c19.js"
   ]
 }
