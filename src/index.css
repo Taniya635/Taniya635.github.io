@@ -14,17 +14,30 @@
 :root{
     --color-bg: #1f1f38;
     --color-bg-variant: #2c2c6c;
+    --color-bg-variant-rgb: 44, 44, 108;  /* RGB values for background variant */
     --color-primary: #4db5ff;
+    --color-primary-rgb: 77, 181, 255;  /* RGB values for primary color */
     --color-primary-variant: rgba(77,181,255,0.4);
     --color-white: #fff;
     --color-light: rgba(255,255,255,0.6);
 
     --transition: all 400ms ease;
     
-    --container-width-lg:75%;
-    --container-width-md:86%;
-    --container-width-sm:90%;
-
+    /* Container widths for different screen sizes */
+    --container-width-xl: 75%;
+    --container-width-lg: 85%;
+    --container-width-md: 90%;
+    --container-width-sm: 95%;
+    
+    /* Responsive typography */
+    --font-size-h1: clamp(2.5rem, 5vw, 3.5rem);
+    --font-size-h2: clamp(1.8rem, 4vw, 2.5rem);
+    --font-size-h3: clamp(1.5rem, 3vw, 2rem);
+    --font-size-normal: clamp(0.875rem, 2vw, 1rem);
+    
+    /* Spacing */
+    --section-spacing: clamp(3rem, 8vw, 6rem);
+    --element-spacing: clamp(1rem, 3vw, 2rem);
 }
 
 html{
@@ -39,10 +52,12 @@ body{
     color: var(--color-white);
     line-height: 1.7;
     background-image: url(../src/assets/bg-texture.png);
+    overflow-x: hidden;
 }
 
 .container{
     width: var(--container-width-lg);
+    max-width: 1400px;
     margin: 0 auto;
 
 }
@@ -50,12 +65,14 @@ h1,h2,h3,h4,h5{
     font-weight: 500;
 }
 h1{
-    font-size: 2.5rem;
+    font-size: var(--font-size-h1);
 }
 
-section{
-    margin-top: 8rem;
-    height: 100vh;
+section {
+    margin-top: var(--section-spacing);
+    padding: 0 1rem;
+    min-height: max-content;
+    scroll-margin-top: 5rem;
 }
 
 section > h2, section > h5{
@@ -81,21 +98,22 @@ a:hover{
     color: var(--color-white);
 }
 
-.btn{
+.btn {
     width: max-content;
-    display: inline-block;
-    width: 120px;
+    min-width: 120px;
     height: 50px;
-    padding-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: var(--color-primary);
-    padding: 0.75 1.2rem;
+    padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
     border: 1px solid var(--color-primary);
     transition: var(--transition);
-
-
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    touch-action: manipulation;
 }
 
 .btn:hover{
@@ -118,26 +136,41 @@ img{
  
 /* ========================== Media query medium devices ======================== */
 @media screen and (max-width:1024px) {
-    .container{
+    .container {
         width: var(--container-width-md);
+        padding: 0 1rem;
     }
     
     section {
-        margin-top: 6rem;
+        margin-top: 4rem;
     }
 
-}
+    h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+    }
 
+    h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+}
 
 /* ========================== Media query small devices ======================== */
 @media screen and (max-width:600px) {
-    .container{
+    .container {
         width: var(--container-width-sm);
+        padding: 0 0.5rem;
     }
     
-    section > h2{
-        margin-top: 2rem;
+    section {
+        margin-top: 2.5rem;
     }
 
+    section > h2 {
+        margin-bottom: 2rem;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
 }
 

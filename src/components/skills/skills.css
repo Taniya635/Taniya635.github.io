@@ -61,6 +61,45 @@
     font-size: 25px;
 }
 
+/* =============================== skills section =============================== */
+
+.skills__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: 1rem;
+}
+
+.skills__card {
+    background: var(--color-bg-variant);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.skills__card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    transform: translateY(-5px);
+}
+
+.skills__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills__details {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.skills__icon {
+    color: var(--color-primary);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
 
 /* ================================== medium screen ============================ */
 
@@ -83,6 +122,13 @@
     .experience_det{
         padding: 1rem;
     }
+    .skills__container {
+        gap: 2rem;
+    }
+
+    .skills__content {
+        gap: 1rem;
+    }
 }
 
 /* ================================== small screen ============================ */
@@ -97,4 +143,15 @@
         width: 100%;
         padding: 2rem 1rem;
     } 
+    .skills__container {
+        padding: 0.5rem;
+    }
+
+    .skills__card {
+        padding: 1.5rem;
+    }
+
+    .skills__content {
+        grid-template-columns: 1fr 1fr;
+    }
 }

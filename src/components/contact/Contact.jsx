@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './contact.css';
 import {GrMail} from 'react-icons/gr'
 import {FaWhatsappSquare} from 'react-icons/fa'
-import  { useRef } from 'react';
-// import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com'
 
 export const Contact = () => {
   const form = useRef();

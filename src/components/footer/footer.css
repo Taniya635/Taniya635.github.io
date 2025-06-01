@@ -1,69 +1,79 @@
-footer{
+footer {
     background: var(--color-primary);
-    padding: 3rem;
+    padding: clamp(2rem, 5vw, 3rem);
     text-align: center;
-    font-size: 0.9rem;
-    margin-top: -10rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    margin-top: var(--section-spacing);
 }
 
-footer a{
+footer a {
     color: var(--color-bg);
-
+    transition: color 0.3s ease;
 }
-.footer_logo{
-    font-size: 2rem;
+
+footer a:hover {
+    color: var(--color-white);
+}
+
+.footer_logo {
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
     display: inline-block;
-
 }
 
-.permalinks{
+.permalinks {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
-    margin: 0 auto;
-
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
 }
 
-.footer_socials{
+.footer_socials {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 4rem;
-
+    gap: clamp(0.5rem, 2vw, 1rem);
+    margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
-.footer_socials a{
+.footer_socials a {
     background: var(--color-bg);
     color: var(--color-white);
-    padding: 0.8rem;
+    padding: clamp(0.6rem, 2vw, 0.8rem);
     border-radius: 0.7rem;
     display: flex;
-    border-radius: 1px solid transparent;
-
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.footer_socials a:hover{
+.footer_socials a:hover {
     background: transparent;
     color: var(--color-bg);
     border-color: var(--color-bg);
+    transform: translateY(-3px);
 }
 
-
-@media screen and (max-width:1024px) {
-    #footer{
-        margin-top: 15rem;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .permalinks{
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .permalinks {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
-    .footer_socials{
-        margin-bottom: 2.6rem;
+
+    .footer_socials {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+    }
+
+    .footer_logo {
+        margin-bottom: 1rem;
     }
 }

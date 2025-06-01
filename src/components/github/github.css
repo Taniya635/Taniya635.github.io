@@ -1,9 +1,9 @@
-/* Adjust margin for the #github element */
 #github {
-    margin-top: 135rem; /* Adjust the margin for larger screens */
-  }
-  
-  /* Styles for individual GitHub items */
+    margin-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+}
+
+/* Styles for individual GitHub items */
   .github_item {
     padding: 1.2rem;
     border-radius: 2rem;

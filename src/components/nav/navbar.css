@@ -1,110 +1,114 @@
 /* Navbar Styles */
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    right: 0;
+    background: rgba(var(--color-bg-variant-rgb), 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Hamburger Menu Toggle */
-  .menu-toggle {
+    padding: 0.8rem clamp(1rem, 3vw, 2rem);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
     display: none;
     cursor: pointer;
-  }
-  
-  .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  
-  /* Menu List for Larger Screens */
-  .menu {
+    z-index: 100;
+    padding: 0.5rem;
+}
+
+.bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-white);
+    margin: 5px 0;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* Menu List for Larger Screens */
+.menu {
     list-style-type: none;
     margin: auto;
-    /* margin-left: 1rem; */
     padding: 0;
     display: flex;
-    justify-content: center; /* Center-align elements horizontally */
-  }
-  
-  .menu li {
-    margin-right: 1rem;
-    margin-left: 2rem;
-  }
-  
-  .menu a {
-    color: #fff;
+    gap: clamp(1rem, 2vw, 2rem);
+    justify-content: center;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: var(--color-white);
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
-  
-  .menu a:hover,
-  .menu a.active {
-    color: var(--color-primary);
-  }
-  
-  /* Additional CSS for Elements */
-  
-  /* Navbar Logo */
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-primary);
-    text-decoration: none;
-  }
-  
-  /* Navbar Search Box (if applicable) */
-  .search-box {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    padding: 0.5rem;
     display: flex;
     align-items: center;
-  }
-  
-  .search-input {
-    border: none;
-    border-bottom: 2px solid var(--color-primary);
-    background-color: transparent;
-    color: #fff;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    font-size: 1rem;
-  }
-  
-  .search-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  /* Responsive Navbar */
-  @media screen and (max-width: 768px) {
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: var(--color-primary);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     .menu-toggle {
-      display: block;
+        display: block;
     }
-  
+
     .menu {
-      display: none;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      top: 60px;
-      right: 0;
-      left: 0;
-      align-items: center; /* Center-align elements horizontally */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(75%, 300px);
+        height: 100vh;
+        background: rgba(var(--color-bg-variant-rgb), 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 5rem 2rem;
+        transition: 0.3s ease-in-out;
+        gap: 2rem;
     }
-  
+
     .menu.active {
-      display: flex;
+        right: 0;
     }
-  
-    .menu li {
-      margin: 0.5rem 0;
+
+    .menu a {
+        font-size: 1rem;
+        justify-content: flex-start;
+        padding: 1rem;
     }
-  }
-  
+
+    /* Hamburger animation */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Handle very small screens */
+@media screen and (max-width: 350px) {
+    .menu {
+        width: 100%;
+        padding: 4rem 1rem;
+    }
+}

@@ -1,84 +1,161 @@
-#contact{
+#contact {
     margin-top: 5rem;
+    padding: 2rem 0;
 }
 
-.container.contact_container{
+.container.contact_container {
     width: 58%;
     display: grid;
     grid-template-columns: 30% 58%;
     gap: 12%;
-
+    margin: 0 auto;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
 }
 
-.contact-options{
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-options {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-
 }
 
-.contact-option{
-    background: var(--color-bg-variant);
-    padding: 1.2rem ;
+.contact-option {
+    background: rgba(var(--color-bg-variant-rgb), 0.8);
+    padding: 2rem;
     border-radius: 1.2rem;
     text-align: center;
-    border: 1px solid transparent;
-    transition: var(--transition);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
-.contact-option:hover{
-    background: transparent;
-    border-color: var(--color-primary-variant);
-
+.contact-option:hover {
+    transform: translateY(-5px);
+    background: rgba(var(--color-bg-variant-rgb), 0.9);
+    border-color: rgba(var(--color-primary-rgb), 0.5);
+    box-shadow: 0 15px 40px -5px rgba(var(--color-primary-rgb), 0.15);
 }
 
-.icons{
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-
+.icons {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
 }
 
-.contact-option a{
-    margin-top: 0.7rem;
+.contact-option:hover .icons {
+    transform: scale(1.1);
+}
+
+.contact-option a {
+    margin-top: 1rem;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-/* ============================ Form ===================================== */
+.contact-option a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
 
-form{
+.contact-option a:hover::after {
+    width: 100%;
+}
+
+/* Form Styles */
+form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
-input,textarea{
+input, textarea {
     width: 100%;
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    background: transparent;
-    border: 2px solid var(--color-primary-variant);
+    border-radius: 1rem;
+    background: rgba(var(--color-bg-variant-rgb), 0.1);
+    border: 2px solid rgba(var(--color-primary-rgb), 0.2);
     resize: none;
     color: var(--color-white);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
 }
 
-/* ============================== medium screen ===============================*/
-@media screen and (max-width:1024px) {
-   
-    .container.contact_container{
+input:focus, textarea:focus {
+    border-color: var(--color-primary);
+    background: rgba(var(--color-bg-variant-rgb), 0.2);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.1);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button[type="submit"] {
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+button[type="submit"]:hover {
+    background: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .container.contact_container {
         grid-template-columns: 1fr;
         gap: 2rem;
+        width: 75%;
     }
 }
 
-/* ============================== medium screen ===============================*/
-@media screen and (max-width:600px) {
-    #contact{
-        margin-top: 8rem;
+@media screen and (max-width: 600px) {
+    #contact {
+        margin-top: 4rem;
     }
-    .container.contact_container{
-        width: var(--container-width-sm);
-        padding-bottom: 15rem;
+    
+    .container.contact_container {
+        width: 90%;
+        padding-bottom: 5rem;
+    }
 
+    .contact-option {
+        padding: 1.5rem;
+    }
+
+    input, textarea {
+        padding: 1.2rem;
     }
 }
